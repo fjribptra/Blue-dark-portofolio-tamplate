@@ -1,0 +1,644 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Navbar */
+:root {
+  --color-one: #222831;
+  --color-two: #31363f;
+  --color-three: #76abae;
+  --color-four: #eeeeee;
+}
+
+.full-container {
+  max-width: 1500px;
+}
+
+nav {
+  background-color: var(--color-one);
+  display: flex;
+  padding: 20px 40px;
+  justify-content: space-between;
+  color: var(--color-four);
+  z-index: 2;
+  position: sticky;
+  top: 0;
+  transition: 0.3s all;
+  -webkit-transition: 0.3s all;
+  -moz-transition: 0.3s all;
+  -ms-transition: 0.3s all;
+  -o-transition: 0.3s all;
+}
+
+nav .logo {
+  font-family: "Pacifico", cursive;
+}
+
+nav .navigation-overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  display: none;
+}
+
+nav .navigation-overlay.active {
+  display: flex;
+}
+
+nav .navigation {
+  position: absolute;
+  background-color: var(--color-three);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 80px;
+  padding-top: 150px;
+  gap: 20px;
+  min-height: 100vh;
+  z-index: 1;
+}
+
+nav a {
+  color: var(--color-four);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--color-three);
+}
+
+.hamburger-button {
+  cursor: pointer;
+}
+
+.hamburger-button span {
+  background-color: var(--color-four);
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+}
+
+section h1 {
+  font-size: 25px;
+}
+
+section {
+  padding: 40px;
+}
+
+section.hero {
+  background: var(--color-one);
+  color: var(--color-four);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+section.hero h1 {
+  font-size: 35px;
+}
+
+section.hero .text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+section.hero .circle-shape {
+  background-color: var(--color-three);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid white;
+  overflow: hidden;
+}
+
+section.hero .name-marking {
+  color: var(--color-three);
+}
+
+section .call-to-actions {
+  display: flex;
+  gap: 20px;
+}
+
+section .call-to-actions a {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+section .call-to-actions a:nth-child(1) {
+  background-color: var(--color-three);
+  color: var(--color-one);
+}
+
+section .call-to-actions a:nth-child(1):hover {
+  background-color: var(--color-one);
+  color: var(--color-three);
+}
+
+section .call-to-actions a:nth-child(2) {
+  border: 3px solid var(--color-three);
+  color: var(--color-four);
+  background-color: var(--color-one);
+}
+
+section .call-to-actions a:nth-child(2):hover {
+  background-color: var(--color-three);
+  color: var(--color-one);
+}
+
+section.about {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+section.about .p-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+section.portofolio {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--color-two);
+  color: var(--color-four);
+}
+
+section.portofolio .card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+section.portofolio .card {
+  background-color: var(--color-four);
+  color: var(--color-one);
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+section.portofolio .card .overlay {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: var(--color-one);
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+}
+
+section.portofolio .card .overlay a {
+  border: 2px solid var(--color-four);
+  text-decoration: none;
+}
+
+section.portofolio .card:hover {
+  box-shadow: 0px 0px 15px white;
+}
+
+section.portofolio .card:hover img {
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -ms-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+}
+
+section.portofolio .card:hover .overlay {
+  display: flex;
+}
+
+section.portofolio .card p {
+  margin-bottom: 20px;
+}
+
+section.experiences {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+section.experiences .experiences-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+section.experiences .experience-card {
+  border: 2px solid var(--color-two);
+  background-color: var(--color-one);
+  padding: 15px;
+  color: var(--color-four);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 0.2s all;
+  -webkit-transition: 0.2s all;
+  -moz-transition: 0.2s all;
+  -ms-transition: 0.2s all;
+  -o-transition: 0.2s all;
+}
+
+section.experiences .experience-card:hover {
+  background-color: var(--color-four);
+  color: var(--color-one);
+}
+
+section.experiences .experience-card:hover h3 {
+  color: var(--color-one);
+}
+
+section.experiences .experience-card:hover strong {
+  color: var(--color-three);
+}
+
+section.experiences .experience-card h3 {
+  color: var(--color-four);
+}
+
+section.experiences .experience-card strong {
+  color: var(--color-three);
+}
+
+section.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--color-three);
+  color: var(--color-four);
+}
+
+section.skills .skills-card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+section.skills .skills-card-container .skill-card {
+  background-color: var(--color-four);
+  color: var(--color-one);
+  border: 3px solid var(--color-three);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 0.3s ease-out;
+  -webkit-transition: 0.3s ease-out;
+  -moz-transition: 0.3s ease-out;
+  -ms-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
+}
+
+section.skills .skills-card-container .skill-card:hover {
+  box-shadow: 0px 0px 15px var(--color-one);
+}
+
+section.skills .skills-card-container .skill-card img {
+  width: 100px;
+}
+
+section.education {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+section .educations-card-container {
+  position: relative;
+  left: 50%;
+  transform: translateX(-48%);
+  -webkit-transform: translateX(-48%);
+  -moz-transform: translateX(-48%);
+  -ms-transform: translateX(-48%);
+  -o-transform: translateX(-48%);
+  width: 95vw;
+  padding: 20px;
+  border-left: 3px solid var(--color-one);
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1500px;
+}
+
+section .education-card {
+  border: 2px solid var(--color-one);
+  padding: 10px 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  position: relative;
+  display: flex;
+  gap: 10px;
+}
+
+section .education-card i {
+  font-size: 20px;
+}
+
+section .education-card::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-one);
+  position: absolute;
+  left: -28px;
+  top: 15%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+section.contact {
+  background-color: var(--color-two);
+  color: var(--color-four);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+section.contact .icon-container {
+  display: flex;
+  gap: 10px;
+}
+
+section.contact .icon-wrapper a {
+  color: var(--color-four);
+}
+
+footer {
+  background-color: #000;
+  color: var(--color-four);
+  padding: 20px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  section h1 {
+    font-size: 30px;
+  }
+
+  section {
+    padding: 50px;
+  }
+
+  section.hero {
+    display: grid;
+    gap: 50px;
+    grid-template-columns: 1fr 1.5fr;
+  }
+
+  section.hero .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    text-align: start;
+    gap: 20px;
+  }
+
+  section.portofolio .card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  section.experiences .experiences-card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .hamburger-button {
+    display: none;
+  }
+
+  nav .navigation-overlay.active {
+    display: none;
+  }
+
+  nav .navigation {
+    position: absolute;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    padding: 40px;
+    padding-top: 20px;
+    gap: 20px;
+    min-height: 0;
+    z-index: 1;
+    top: 0;
+  }
+
+  nav .navigation-overlay {
+    background-color: transparent;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    display: flex;
+  }
+
+  section {
+    padding: 80px;
+  }
+
+  section h1 {
+    font-size: 40px;
+  }
+
+  section > p {
+    font-size: 22px;
+  }
+
+  section.hero {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 70px;
+  }
+
+  section.hero h1 {
+    font-size: 50px;
+  }
+
+  section.hero h3 {
+    font-size: 27px;
+  }
+
+  section.about .p-container {
+    display: flex;
+    flex-direction: row;
+    text-align: justify;
+    gap: 70px;
+    font-size: 20px;
+  }
+
+  section.portofolio .card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  section.portofolio img {
+    width: 300px;
+    height: 200px;
+  }
+
+  section.experiences .experiences-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  section.skills .skills-card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+  }
+}
